@@ -7,7 +7,7 @@ namespace App\Models;
 class Episodio extends \Illuminate\Database\Eloquent\Model
 {
     public $timestamps = false;
-    protected $fillable = ['temporada', 'numero', 'assistido'];
+    protected $fillable = ['temporada', 'numero', 'assistido', 'serie_id'];
 
     public function serie()
     {
