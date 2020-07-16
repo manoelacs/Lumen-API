@@ -11,9 +11,13 @@ use Illuminate\Http\Request;
 abstract class BasicController
 {
     protected $classe;
-    public function index()
+    public function index(Request $request)
     {
-        return $this->classe::all();
+        #por padrao não precisa informar $request->per_page
+        # não informando isso será mostrado 15 páginas por padrão
+        #não precisando informar esse parâmetro na url
+    //$request->per_page
+        return $this->classe::paginate();
     }
 
     public function store(Request $request)

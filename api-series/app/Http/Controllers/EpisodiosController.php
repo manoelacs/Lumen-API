@@ -13,4 +13,15 @@ class EpisodiosController extends BasicController
         $this->classe = Episodio::class;
     }
 
+    public function episodiosPorSerie(int $id)
+    {
+        $episodios = Episodio::query()
+            ->where('serie_id', $id)
+            ->orderBy('temporada')
+            //->get() Remove o get pra usar o paginate
+            ->paginate();
+        return $episodios;
+
+    }
+
 }
