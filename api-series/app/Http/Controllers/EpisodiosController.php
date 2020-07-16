@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Episodio;
+use Illuminate\Support\Facades\Auth;
 
 class EpisodiosController extends BasicController
 {
@@ -20,6 +21,7 @@ class EpisodiosController extends BasicController
             ->orderBy('temporada')
             //->get() Remove o get pra usar o paginate
             ->paginate();
+        //Auth::user();
         return $episodios;
 
     }

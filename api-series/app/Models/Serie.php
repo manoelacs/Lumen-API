@@ -16,7 +16,7 @@ class Serie extends \Illuminate\Database\Eloquent\Model
         return $this->hasMany(Episodio::class);
 
     }
-    public function getLinksAttribute($links): bool
+    public function getLinksAttribute(): bool
     {
         $episodios = Episodio::query()->where('serie_id',$this->id)->count();
                if($episodios>0){
